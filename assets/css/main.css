@@ -1,10 +1,23 @@
 body {
 	background-color: rgba(230, 236, 237, 0.8);
 }
+.brand-logo{
+	margin-left: 20px;
+}
+
+header{
+	margin-top: 20px;
+	padding: 3% 0;
+	background-color: rgba(187, 212, 208, 0.8);
+}
+
+.container{
+	margin: 70px auto;
+}
 
 h1 {
 	text-align: center;
-	padding: 50px 0;
+	padding: 10px 0;
 	font-size: 30px;
 	margin: 0;
 	font-weight: 200;
@@ -12,65 +25,56 @@ h1 {
 }
 
 #button{
-	display: inline-block;
-	right: 0;
-	background-color: #fc999b;
-	color: #ffffff;
-	border-radius: 5px;
-	text-align: center;
-	margin-top: 2px;
-	padding: 5px 15px;
-}
-
-#button:hover{
-	cursor: pointer;
-	opacity: .8;
-}
-
-#add-todo{
 	padding: 25px 0 0 0;
 	font-size: 18px;
 	font-weight: 400;
-	color: #d8d8d8;
+	color: green;
 	display: inline-block;
 	cursor: pointer;
 }
 
-#add-todo:hover{
+#button:hover{
 	color:#6bc569;
-	/*transition*/
-	-webkit-transition:none;
-	-moz-transition:none;
-	-o-transition:none;
-	transition:none;
 }
 
 /*#add-todo .fa-plus{
 	font-size:14px;
-	/*transition
-	-webkit-transition:none;
-	-moz-transition:none;
-	-o-transition:none;
-	transition:none;
 }*/
-
-.delete-item{
-	display:block;
-	position:relative;
-	height:36px;
-	width:36px;
-	line-height:36px;
-	right:0;
-	top:0;
-	text-align:center;
-	color:#d8d8d8;
-	opacity:0;
+.todo-wrap{
+display: block;
+position: relative;
+padding-left: 35px;
 }
 
-.todo-wrap:hover .delete-item{
-	opacity:1;
+.todo-wrap:last-of-type{
+/*box-shadow*/
+-webkit-box-shadow:none;
+   -moz-box-shadow:none;
+        box-shadow:none;
+}
+
+.delete-item{
+	display: inline-block;
+	position: relative;
+	height: 30px;
+	width: 100px;
+	float: right;
+	line-height: 36px;
+	top: 0;
+	color: red;
+	opacity: 0;
+	border: 2px solid black;
+	text-align: center;
+	border-radius: 5px;
+	padding: 0px 10px;
+	cursor: pointer;
+
+}
+
+.delete-item{
+	opacity:5;
 }
 
 .delete-item:hover{
-	color:#cd4400;
+	color: yellow;
 }

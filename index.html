@@ -14,21 +14,34 @@
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-	<div class="container">
-		<h1>To Do List</h1>
-		<form id="todo-list">
-			<span class="todo-wrap">
-				<input type="checkbox" id="1" checked/>
-				<span class="delete-item" title="remove">Remove
-				</span>
-			</span>
-			<br/>
-			<div id="add-todo">
-				<i class="fa fa-plus"></i>
-				Add an Item
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo">To Do App</a>
+		</div>
+	</nav>
+	<header class="container">
+		<div class="row">
+			<div class="col offset-s3 s6">
+				<h1>To Do List</h1>
 			</div>
-			<br/>
-		</form>
+		</div>
+		<div class="row">
+			<div class="col offset-s3 s6">
+				<form id="todo-list">
+					<span class="todo-wrap">
+						<input type="text" name="ListItem"/>
+					</span>
+					<br/>
+					<div id="button">
+						<i class="fa fa-plus"></i>
+						Add an Item
+					</div>
+					<br/>
+					<ul></ul>
+				</form>
+			</div>
+		</div>
+	</header>
 		<!--<input type="text" name="ListItem"/>
 		</form>
     
