@@ -1,29 +1,82 @@
-$(document).ready(
-  function(){
-    $('#button').click(
-      function(){
-        var toAdd = $('input[name=ListItem]').val();
-        $('ul').append('<li>' + toAdd + '</li>');
+/*$(document).ready(function(){
+  $("#add-todo").click(function(e){
+    e.preventDefault();
+    var tarea = $("#item").val();
+    if(tarea == ""){
+      alert("Debes escribir tu tarea");
+    } else {
+      $('.todo-wrap').append('<div><span class="center-align">' + tarea + '</p></div>');
+    }
+  });
+});*/
+
+// add items
+$('#add-todo').click(function(){
+  var lastSibling = $('#todo-list > .todo-wrap:last-of-type > input').attr('id');
+  var newId = Number(lastSibling) + 1;
+
+      
+  $(this).before('<span class="editing todo-wrap"><input type="checkbox" id="'+newId+'"/><label for="'+newId+'" class="todo"><input type="text" class="input-todo" id="input-todo'+newId+'"/></label></div>');
+  $('#input-todo'+newId+'').parent().parent().animate({
+    height:"36px"
+  },200)
+  $('#input-todo'+newId+'').focus();
+  
+	$('#input-todo'+newId+'').enterKey(function(){
+    $(this).trigger('enterEvent');
+  })
+  
+  $('#input-todo'+newId+'').on('blur enterEvent',function(){
+    var todoTitle = $('#input-todo'+newId+'').val();
+    var todoTitleLength = todoTitle.length;
+    if (todoTitleLength > 0) {
+      $(this).before(todoTitle);
+      $(this).parent().parent().removeClass('editing');
+      $(this).parent().after('<span class="delete-item" title="remove">Remove</span>');
+      $(this).remove();
+      $('.delete-item').click(function(){
+        var parentItem = $(this).parent();
+        parentItem.animate({
+          left:"-30%",
+          height:0,
+          opacity:0
+        },200);
+        setTimeout(function(){ $(parentItem).remove(); }, 1000);
       });
+    }
+    else {
+      $('.editing').animate({
+        height:'0px'
+      },200);
+      setTimeout(function(){
+        $('.editing').remove()
+      },400)
+    }
+  })
 
+});
 
-    $("input[name=ListItem]").keyup(function(event){
-      if(event.keyCode == 13){
-        $("#button").click();
-      }         
-    });
+// remove items 
 
-    $(document).on('dblclick','li', function(){
-      $(this).toggleClass('strike').fadeOut('slow');    
-    });
+$('.delete-item').click(function(){
+  var parentItem = $(this).parent();
+  parentItem.animate({
+    left:"-30%",
+    height:0,
+    opacity:0
+  },200);
+  setTimeout(function(){ $(parentItem).remove(); }, 1000);
+});
 
-    $('input').focus(function() {
-      $(this).val('');
-    });
+// Enter Key detect
 
-    $('ul').sortable();  
-
-  }
-  );
-
-
+$.fn.enterKey = function (fnc) {
+    return this.each(function () {
+        $(this).keypress(function (ev) {
+            var keycode = (ev.keyCode ? ev.keyCode : ev.which);
+            if (keycode == '13') {
+                fnc.call(this, ev);
+            }
+        })
+    })
+}

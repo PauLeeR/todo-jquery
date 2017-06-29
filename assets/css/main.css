@@ -24,7 +24,7 @@ h1 {
 	color: #454545;
 }
 
-#button{
+#add-todo{
 	padding: 25px 0 0 0;
 	font-size: 18px;
 	font-weight: 400;
@@ -33,7 +33,7 @@ h1 {
 	cursor: pointer;
 }
 
-#button:hover{
+#add-todo:hover{
 	color:#6bc569;
 }
 
@@ -45,7 +45,6 @@ display: block;
 position: relative;
 padding-left: 35px;
 }
-
 .todo-wrap:last-of-type{
 /*box-shadow*/
 -webkit-box-shadow:none;
