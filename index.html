@@ -6,12 +6,39 @@
 	<title>To do List with jQuery</title>
 	<!--CDN Materialize-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	<!--CDN Font-Awesome-->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<!-- Linkear js Font Awesome -->
+	<script src="https://use.fontawesome.com/6bff936249.js"></script>
 	<!--mis estilos-->
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
-	<script src="assets/js/main.js"></script>
-</body>
-</html>
+	<div class="container">
+		<h1>To Do List</h1>
+		<form id="todo-list">
+			<span class="todo-wrap">
+				<input type="checkbox" id="1" checked/>
+				<span class="delete-item" title="remove">Remove
+				</span>
+			</span>
+			<br/>
+			<div id="add-todo">
+				<i class="fa fa-plus"></i>
+				Add an Item
+			</div>
+			<br/>
+		</form>
+		<!--<input type="text" name="ListItem"/>
+		</form>
+    
+		<div id="button">Remove</div>
+		
+		<ol></ol>   -->
+
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+	</html>
